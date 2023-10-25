@@ -1,0 +1,21 @@
+<h1>{{title}}</h1>
+{% if messages %}
+  {% for message in messages %}
+    <h2>{{ message }}</h2>
+  {% endfor %}
+{% endif %}
+
+<form method="POST" action=".">
+  {% csrf_token %} 
+  {{form.as_p}}
+  <input type="submit" value="Shorten!" />
+</form>
+
+<h2>Shorten URLs so far</h2>
+{% for ShortenerURL in ShortenerURLs %}
+  <ul>
+    <li>
+      <a href="{{ ShortenerURL.short_code }}">{{ ShortenerURL }}</a> // Clicked: {{ ShortenerURL.count }}
+    </li>
+  </ul>
+{% endfor %}

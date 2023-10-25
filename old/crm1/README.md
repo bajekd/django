@@ -1,0 +1,1 @@
+[full_playlist](https://www.youtube.com/playlist?list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO) // [current_stage](https://www.youtube.com/watch?v=gXGQmt_U9Ao&list=PL-51WBLyFTg2vW-_6XBoUpE7vpmoR3ztO&index=16)

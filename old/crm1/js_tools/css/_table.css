@@ -1,0 +1,37 @@
+@layer components {
+  .table-title {
+    @apply font-bold text-2xl text-gray-600 text-center p-4 border-b border-gray-400 border-opacity-30;
+  }
+
+  .table-card {
+    @apply bg-white p-4 rounded-2xl shadow-xl;
+  }
+
+  .table-cell {
+    @apply border-b text-left p-1;
+  }
+
+  .table-button {
+    @apply text-teal-two p-1 hover:text-teal-three;
+  }
+
+  .table-button-add {
+    @apply w-full flex justify-center text-white bg-teal-two hover:bg-teal-three p-1 rounded-xl;
+  }
+
+  .table-button-remove {
+    @apply text-gray-600 p-1 hover:text-gray-800;
+  }
+
+  .table-button-remove--confirm {
+    @apply flex justify-center text-white bg-red-600 hover:bg-red-700 p-1 rounded-xl;
+  }
+
+  .table-button-remove--cancel {
+    @apply flex justify-center text-white bg-gray-400 hover:bg-gray-500 p-1 rounded-xl;
+  }
+
+  .table-button-search {
+    @apply border border-teal-two text-teal-two rounded text-center hover:bg-teal-two hover:text-white px-2 py-1;
+  }
+}

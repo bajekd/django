@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+
+<h1>Side Projects</h1>
+<div class="row">
+  {% for project in projects %}
+  {% if project.is_active %}
+   <div class="col-md-4">
+    <div class="card mb-2">
+     <a href="{{ project.link_to_repo }}" target="_blank"><img class="card-img-top" src="{{ project.image }}"/></a>
+      <div class="card-body">
+        <a class="link" href="{{ project.link_to_repo }}" target="_blank"><h5 class="card-title">{{ project.title }}</h5></a>
+        <p class="card-text">{{ project.short_description }}</p>
+        <p class="card-text"><span class="bold">Technology used: </span>{{ project.technology }}</p>
+        <a href="{{ project.link_to_repo }}" target="_blank" class="btn btn-primary">
+          Read More
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+
+{% endblock %}

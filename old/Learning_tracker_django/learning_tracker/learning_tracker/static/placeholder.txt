@@ -1,0 +1,2 @@
+This file ensures that learning_tracker/learning_tracker/static/ will be added to the project(when pushed heroku don't include empty depositories).
+Django will colect static files and place them in learning_tracker/static/.

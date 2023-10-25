@@ -1,0 +1,24 @@
+{% load static %}
+
+<nav class="navbar bg-gray-700">
+
+  <div class="navbar-wrapper">
+    <div class='navbar-user'>
+      <img src="{% static 'img/logo.png'%}" alt="Logo" class="navbar-pic">
+      <h1 class="text-gray-200">Hello <a href="#" class="navbar-pic-greetings"><span>{{request.user}}</span></a>!</h1>
+    </div>
+    <div class="navbar-toggler" id="burger">
+      <svg class="toggler-item" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"> <path d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    </div>
+  </div>
+ 
+  <ul class="navbar-nav hidden md:flex" id="menu">
+    {% if request.user.is_staff %}
+    <li class="md:ml-3"><a href="{% url 'accounts-dashboard' %}" class="nav-link">Home</a></li>
+    <li class="md:ml-3"><a href="{% url 'accounts-products' %}" class="nav-link">Products</a></li>
+    {% endif %}
+    <li class="md:ml-3"><a href="{% url 'logout' %}" class="nav-link">Logout</a></li>
+  </ul>
+  
+  <script src="{% static 'js/app.js' %}"></script>
+</nav>

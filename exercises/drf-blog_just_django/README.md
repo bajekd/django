@@ -1,0 +1,1 @@
+app does not work if you are logged in (csrf token issue)

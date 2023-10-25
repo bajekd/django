@@ -1,0 +1,36 @@
+@layer components {
+  .navbar {
+    @apply w-full bg-gray-700 text-gray-200 shadow-lg px-4 top-0 fixed md:flex md:items-center md:justify-between;
+  }
+
+  .navbar-wrapper {
+    @apply flex justify-between items-center;
+  }
+
+  .navbar-user {
+    @apply flex items-center ml-2;
+  }
+  .navbar-pic {
+    @apply rounded-full h-16 p-3;
+  }
+
+  .navbar-pic-greetings {
+    @apply hover:text-yellow-600 hover:shadow-lg;
+  }
+
+  .navbar-toggler {
+    @apply px-4 cursor-pointer border border-gray-500 border-opacity-50 md:hidden;
+  }
+
+  .toggler-item {
+    @apply w-8 h-8 text-gray-400 text-opacity-80;
+  }
+
+  .navbar-nav {
+    @apply list-none py-1 md:items-center md:mr-6 2xl:mr-16;
+  }
+
+  .nav-link {
+    @apply no-underline block md:flex border-b border-gray-500 md:border-none py-2 md:py-0 hover:underline transform hover:text-gray-400;
+  }
+}

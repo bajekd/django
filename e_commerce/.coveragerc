@@ -1,0 +1,19 @@
+[run]
+omit =
+   conftest.py
+   */virtualenvs/*
+   */migrations/*
+   *tests*
+   *__init__.py*
+   *settings/*
+   *AppData*
+   
+[report]
+omit =
+   conftest.py
+   */virtualenvs/*
+   */migrations/*
+   *tests*
+   *__init__.py*
+   *settings/*
+   *AppData*

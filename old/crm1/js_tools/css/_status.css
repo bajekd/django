@@ -1,0 +1,31 @@
+@layer components {
+  .status-title {
+    @apply font-bold text-2xl text-center text-white border-b border-gray-500 border-opacity-30 p-4;
+  }
+
+  .status-text {
+    @apply font-bold text-2xl text-center text-white p-8;
+  }
+  .status-customer-wrapper {
+    @apply bg-white shadow rounded-md;
+  }
+  .status-title-customer {
+    @apply font-bold text-2xl text-center text-black border-b border-gray-500 border-opacity-30 p-4;
+  }
+
+  .status-text-customer {
+    @apply font-normal text-4xl text-center text-black p-8;
+  }
+
+  .status-text-customer--info {
+    @apply font-normal text-base p-1 text-center text-black;
+  }
+
+  .status-buton-customer--wraper {
+    @apply flex flex-col justify-center items-center p-4;
+  }
+
+  .status-buton-customer {
+    @apply border border-teal-two text-teal-two rounded-xl w-full text-center hover:bg-teal-two hover:text-white;
+  }
+}

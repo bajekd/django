@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block page_content %}
+
+<a class="link" href="{{ project.link_to_repo }}"><h1>{{ project.title }}</h1></a>
+<div class="row">
+  {% if project.long_description %}
+    <div class="col-md-8">
+      <a href="{{ project.link_to_repo }}"><img src="/media/{{ project.gif }}" width="100%" /></a>
+    </div>
+    <div class="col-md-4">
+      <h5>Technology used:</h5>
+      <p>{{ project.technology }}</p>
+      <br />
+      <h5>About the project:</h5>
+      <p>{{ project.short_description }}</p>
+      <a class="link" href="{{ project.link_to_repo }}"><h5>Link to repository</h5></a>
+    </div>
+    <div>
+      <p>{{ project.long_description }}</p>
+    </div>
+  {% else %}
+  <div class="col-md-12">
+      <a href="{{ project.link_to_repo }}"><img src="/{{ project.image }}" width="100%"/></a>
+      <img src="" width="50%" />
+      <img src="" width="50%" />
+    </div>
+    <div>
+      <a class="link" href="{{ project.link_to_repo }}"><h5>Link to repository</h5></a>
+      <h5>Technology used:</h5>
+      <p>{{ project.technology }}</p>
+      <h5>About the project:</h5>
+      <p>{{ project.short_description }}</p>
+    </div>
+  {% endif %}
+</div>
+
+{% endblock %}

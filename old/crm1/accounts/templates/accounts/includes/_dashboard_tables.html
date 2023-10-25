@@ -1,0 +1,86 @@
+<div class="grid grid-gap-2 xl:grid-cols-2 gap-4">
+
+    <div role="wrapper">
+      <h1 class="table-title">CUSTOMERS</h1>
+      <div class="p-4">
+        <div class="table-card">
+          <div class="button-wrapper">
+            <button class="table-button-add">
+              <div class="flex">
+                <svg class="w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" /></svg>
+                <h1 class="ml-2">Add another customer</h1>
+              </div>
+            </button>
+          </div>
+          
+          <table class="w-full">
+            <tr>
+              <th class="border-b p-1">View</th>
+              <th class="table-cell">Customer</th>
+              <th class="table-cell">Phone</th>
+            </tr>
+            {% for customer in customers %}
+              <tr>
+                <td class="border-b p-1">
+                  <div class="button-wrapper">
+                    <a href="{% url 'accounts-customer' customer.id %}" class="table-button"><svg class="w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg></a>
+                  </div>
+                </td>
+                <td class="table-cell">{{ customer.name }}</td>
+                <td class="table-cell">{{ customer.phone }}</td>
+              </tr>
+            {% endfor %}
+            <tr>
+
+            </tr>
+          </table>
+          <div class="mt-4">
+            {% if customers.has_previous %}
+              <a href="{% url 'accounts-dashboard' %}?page=1" class="table-button-search">First</a>
+              <a href="{% url 'accounts-dashboard' %}?page={{ customers.previous_page_number }}" class="table-button-search">Previous</a>
+            {% endif %}
+            <p class="inline p-2">Page {{ customers.number }} of <a href=>{{ paginator.num_pages }}</a></p>
+            {% if customers.has_next %}
+              <a href="{% url 'accounts-dashboard' %}?page={{ customers.next_page_number }}" class="table-button-search">Next</a>
+              <a href="{% url 'accounts-dashboard' %}?page={{ paginator.num_pages }}" class="table-button-search">Last</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div role="wraper">
+      <h1 class="table-title">LAST 10 ORDERS</h1>
+      <div class="p-4">
+        <div class="table-card">
+          <table class="w-full">
+            <tr>
+              <th class="table-cell">Product</th>
+              <th class="table-cell">Date Orderd</th>
+              <th class="table-cell">Status</th>
+              <th class="border-b p-1">Update</th>
+              <th class="border-b p-1">Remove</th>
+            </tr>
+            {% for order in orders %}
+              <tr>
+                <td class="table-cell">{{ order.product }}</td>
+                <td class="table-cell">{{ order.date_created }}</td>
+                <td class="table-cell">{{ order.status }}</td>
+                <td class="border-b p-1">
+                  <div class="button-wrapper">
+                    <a href="{% url 'update-order' order.id %}" class="table-button"><svg class="w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg></a>
+                  </div>
+                </td>
+                <td class="border-b p-1">
+                  <div class="button-wrapper">
+                    <a href="{% url 'delete-order' order.id %}" class="table-button-remove"><svg class="w-6"xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg></a>
+                  </div>
+                </td>
+              </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </div>
+  
+  </div>

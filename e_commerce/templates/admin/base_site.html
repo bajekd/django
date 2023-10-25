@@ -1,0 +1,18 @@
+{% extends 'admin/base_site.html' %}
+
+{% block extrastyle %}
+
+<style type="text/css">
+  body:before {
+    display: block;
+    line-height: 35px;
+    text-align: center;
+    font-weight: bold;
+    text-tranform: uppercase;
+    color: gray;
+    content: "{{ ENV_NAME }}";
+    background-color: {{ ENV_COLOR }};
+  }
+</style>
+
+{% endblock extrastyle %}

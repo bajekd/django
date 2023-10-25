@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="p-4">
+    <div class="table-card">
+        <p class="text-2xl text-center">Are you sure you want to delete?</p>
+        <form action="{% url 'delete-order' item.id %}" method="POST" class="flex flex-col justify-around items-center">
+        {% csrf_token %}
+          <div class="flex p-1">
+            <a href="{% url 'accounts-dashboard' %}" class="table-button-remove--cancel mr-4">Cancel</a>
+            <button type="submit" class="table-button-remove--confirm ml-4">Confirm</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

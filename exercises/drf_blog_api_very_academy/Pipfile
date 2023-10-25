@@ -1,0 +1,27 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+isort = "*"
+flake8 = "*"
+pytest = "*"
+django = "*"
+djangorestframework = "*"
+coverage = "*"
+django-cors-headers = "*"
+django-extensions = "*"
+djangorestframework-simplejwt = "*"
+pyyaml = "*"
+coreapi = "*"
+uritemplate = "*"
+
+[dev-packages]
+black = "*"
+
+[requires]
+python_version = "3.9"
+
+[pipenv]
+allow_prereleases = true

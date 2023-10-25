@@ -1,0 +1,17 @@
+{
+  "repository": "https://github.com/blazejdobek/_django_e_commerce",
+  "image": "heroku/python",
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "ecommerce.settings.base_settings",
+    "DEBUG": "True",
+    "ALLOWED_HOSTS": {
+      "value": ".herokuapp.com"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-python.git"
+    }
+  ],
+  "success_url": "/"
+}

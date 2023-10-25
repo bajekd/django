@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div class="p-4">
+    <div class="table-card">
+        <form method="POST" class="flex flex-col justify-around items-center">
+        {% csrf_token %}
+        {{ form.management_form }} <!-- necessery to work -> keep track which form has been submited-->
+        {% for field in form %}
+            <div class="p-4">{{ field }}</div>
+            <hr class="w-full">
+        {% endfor %}
+            <button type="submit" class="table-button-search mt-4">Submit</button>
+        </form>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

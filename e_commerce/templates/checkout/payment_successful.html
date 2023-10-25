@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Payment Successful{%endblock %}
+{% block content %}
+
+<div class="container">
+  <div class="col-12"><h1 class="h2">Payment Successful</h1></div>
+  <hr />
+  <div class="col-12">
+    <p>View all <a href="{% url 'account:orders'%}">orders</a></p>
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,13 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import './_navbar.css';
+@import './_status.css';
+@import './_table.css';
+
+@layer components {
+  .button-wrapper {
+    @apply w-full flex justify-center items-center;
+  }
+}

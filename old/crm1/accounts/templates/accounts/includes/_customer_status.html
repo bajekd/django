@@ -1,0 +1,26 @@
+<div class="grid grid-gap-2 md:grid-cols-3 md:gap-4">
+    
+    <div class="p-5">
+        <div class="status-customer-wrapper">
+            <h1 class="status-title-customer">Customer</h1>
+            <div class="status-buton-customer--wraper">
+                <a href="" class="status-buton-customer mb-2">Update Customer</a>
+                <a href="{% url 'create-order' customer.id %}" class="status-buton-customer">Place Order</a>
+            </div>
+        </div>
+    </div>
+    <div class="p-5">
+        <div class="status-customer-wrapper">
+            <h1 class="status-title-customer">{{ customer.name }}</h1>
+            <h1 class="status-text-customer--info">Email: {{ customer.email }}</h1>
+            <h1 class="status-text-customer--info">Phone: {{ customer.phone }}</h1>
+        </div>
+    </div>
+    <div class="p-5">
+        <div class="status-customer-wrapper">
+            <h1 class="status-title-customer">Total Orders</h1>
+            <h1 class="status-text-customer">{{ total_orders }}</h1>
+        </div>
+    </div>
+   
+</div>

@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+beautifulsoup4 = "*"
+selenium = "*"
+requests = "*"
+redis = "*"
+celery = "*"
+django-celery-beat = "*"
+isort = "*"
+flake8 = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"

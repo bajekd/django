@@ -1,0 +1,38 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+asgiref = "*"
+coverage = "*"
+mccabe = "*"
+pytz = "*"
+sqlparse = "*"
+testfixtures = "*"
+toml = "*"
+Django = "~=3.1"
+Pillow = "*"
+isort = "*"
+six = "*"
+django-environ = "*"
+django-debug-toolbar = "*"
+django-mptt = "*"
+paypal-checkout-serversdk = "*"
+pytest-django = "*"
+factory-boy = "*"
+pytest-factoryboy = "*"
+gunicorn = "*"
+flake8 = "*"
+faker = "*"
+django-otp = "*"
+qrcode = "*"
+
+[dev-packages]
+black = "*"
+
+[requires]
+python_version = "3.9"
+
+[pipenv]
+allow_prereleases = true

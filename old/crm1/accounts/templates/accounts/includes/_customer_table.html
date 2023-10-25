@@ -1,0 +1,47 @@
+<div role="wraper">
+
+    <div class="p-4">
+    <div class="table-card">
+        <table class="w-full">
+        <tr>
+            <th class="table-cell">Product</th>
+            <th class="table-cell">Note</th>
+            <th class="table-cell">Date Orderd</th>
+            <th class="table-cell">Status</th>
+            <th class="border-b p-1">Update</th>
+            <th class="border-b p-1">Remove</th>
+        </tr>
+        {% for order in orders %}
+            <tr>
+                <td class="table-cell">{{ order.product }}</td>
+                <td class="table-cell">{{ order.note }}</td>
+                <td class="table-cell">{{ order.date_created}}</td>
+                <td class="table-cell">{{ order.status}}</td>
+                <td class="border-b p-1">
+                <div class="button-wrapper">
+                    <a href="#" class="table-button"><svg class="w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg></a>
+                </div>
+                </td>
+                <td class="border-b p-1">
+                <div class="button-wrapper">
+                    <a href="#" class="table-button-remove"><svg class="w-6"xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" /></svg></a>
+                </div>
+                </td>
+            </tr>
+        {% endfor %}
+        </table>
+        <div class="mt-4">
+            {% if orders.has_previous %}
+            <a href="{% url 'accounts-customer' customer.id %}?page=1" class="table-button-search">First</a>
+            <a href="{% url 'accounts-customer' customer.id %}?page={{ orders.previous_page_number }}" class="table-button-search">Previous</a>
+            {% endif %}
+            <p class="inline p-2">Page {{ orders.number }} of <a href=>{{ paginator.num_pages }}</a></p>
+            {% if orders.has_next %}
+            <a href="{% url 'accounts-customer' customer.id %}?page={{ orders.next_page_number }}" class="table-button-search">Next</a>
+            <a href="{% url 'accounts-customer' customer.id %}?page={{ paginator.num_pages }}" class="table-button-search">Last</a>
+            {% endif %}
+        </div>
+    </div>
+    </div>
+    
+</div>

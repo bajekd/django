@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRM</title>
+    <link rel="stylesheet" href="{% static 'css/tailwind-output.css' %}" />
+  </head>
+  <body class="w-screen bg-gray-200">
+    {% include '_navbar.html' %}
+    <main class="pt-16">
+      {% block content %} {% endblock %}
+    </main>
+    {% include '_footer.html' %} 
+  </body>
+
+</html>
